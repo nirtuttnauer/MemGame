@@ -1,0 +1,178 @@
+:root {
+    --primary-color: #222831;
+    --secondary-color: #EEEEEE;
+    --main-font-size: 1.25em;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    font-size: 16px;
+}
+
+.container {
+    min-height: 50vh;
+    width: 100%;
+    text-align: center;
+    padding: 2em;
+}
+
+.reset-btn, .menu {
+    font-size: var(--main-font-size);
+    font-weight: bold;
+    margin: 1em 0;
+}
+
+.reset-btn {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.reset-btn:hover {
+    background-color: #0056b3; /* Darker shade for hover effect */
+}
+
+.menu {
+    z-index: 1;
+}
+
+/*cards*/
+.card {
+    background-color: var(--secondary-color);
+    border-radius: 10px; /* Gives the card rounded corners */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Adds a subtle shadow to the card */
+    transition: 0.3s ease; /* Adds a transition effect when hovering the card */
+    width: 80%; /* Reduces the card width on smaller screens */
+    height: 80px; /* Allows the card height to adapt based on content */
+    display: flex; /* Allows multiple cards in a row */
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+    margin: 1em; /* Adds some space around each card */
+    max-width: 350px; /* Increased Maximum width of a card */
+    overflow: hidden; /* Ensures the image does not exceed the card dimensions */
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+@media (min-width: 768px) {
+    .card {
+        width: 60%; /* Increased card width on medium screens and above */
+    }
+}
+
+@media (min-width: 1024px) {
+    .card {
+        width: 40%; /* Increased card width on large screens and above */
+    }
+}
+
+#leaderboard-title {
+    margin-top: 100px;
+}
+
+/* Leaderboard */
+.leaderboard-container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 2em;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s ease;
+    border-radius: 10%;
+
+}
+
+.leaderboard-container:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1em 0;
+}
+
+.table th, .table td {
+    padding: 0.75em;
+    text-align: center;
+    border-bottom: 2px solid var(--primary-color);
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.table th {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.table tbody tr:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .leaderboard-container {
+        width: 95%;
+        padding: 1em;
+    }
+
+    .table th, .table td {
+        padding: 0.5em;
+    }
+}
+
+.modal {
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: var(--primary-color);
+}
+
+.modal-content {
+    background-color: var(--secondary-color);
+    margin: 15% auto;
+    padding: 20px;
+    width: 80%;
+    z-index: 2;
+}
+
+.modal-backdrop {
+    z-index: 1;
+}
+
+.close {
+    float: none;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
